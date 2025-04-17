@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pricing - Storgen Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <style>
+    .tab-active {
+      color: #3b82f6;
+      border-bottom: 2px solid #3b82f6;
+      text-shadow: 0 0 10px #3b82f6;
+    }
+  </style>
+  <script>
+    function toggleTab(tab) {
+      document.getElementById('plans').style.display = tab === 'plans' ? 'block' : 'none';
+      document.getElementById('games').style.display = tab === 'games' ? 'block' : 'none';
+
+      const plansBtn = document.getElementById('plansBtn');
+      const gamesBtn = document.getElementById('gamesBtn');
+
+      if (tab === 'plans') {
+        plansBtn.classList.add('tab-active');
+        gamesBtn.classList.remove('tab-active');
+      } else {
+        gamesBtn.classList.add('tab-active');
+        plansBtn.classList.remove('tab-active');
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      toggleTab('plans');
+
+      tsParticles.load("particles-js", {
+        particles: {
+          number: { value: 100 },
+          color: { value: "#3b82f6" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5 },
+          size: { value: 3 },
+          move: { enable: true, speed: 1, direction: "bottom" },
+        },
+        interactivity: { events: { onhover: { enable: true, mode: "repulse" } } },
+        detectRetina: true,
+      });
+    });
+  </script>
+</head>
+<body class="bg-gray-950 text-white font-sans relative">
+  <div id="particles-js" class="absolute inset-0 -z-10"></div>
+
+  <!-- Navigation Tabs -->
+  <nav class="flex justify-center space-x-8 text-lg font-medium bg-gray-900 py-4 z-10 relative">
+    <button id="plansBtn" onclick="toggleTab('plans')" class="text-gray-400 hover:text-white transition">Plans</button>
+    <button id="gamesBtn" onclick="toggleTab('games')" class="text-gray-400 hover:text-white transition">Game List</button>
+  </nav>
+
+  <!-- Plans Section -->
+  <section id="plans">
+    <header class="text-center py-10">
+      <h1 class="text-4xl font-bold text-white">Storgen Hub Plans</h1>
+      <p class="text-gray-400 mt-2">Choose the plan that fits your journey</p>
+    </header>
+
+    <section class="flex flex-col md:flex-row justify-center items-center gap-8 px-4 md:px-0">
+      <!-- Free Plan -->
+      <div class="bg-gray-900 rounded-2xl shadow-lg p-6 w-full max-w-sm text-center hover:scale-105 transition">
+        <h2 class="text-2xl font-semibold mb-2">Storgen Hub Free</h2>
+        <p class="text-gray-400 mb-4">Free</p>
+        <ul class="text-sm text-gray-300 mb-6 space-y-2">
+          <li>✔ Basic game support</li>
+          <li>✔ 48-hour license key</li>
+          <li>✔ Priority support</li>
+        </ul>
+        <button class="bg-blue-600 hover:bg-blue-700 w-full py-2 rounded-xl font-semibold">Get Started</button>
+      </div>
+
+      <!-- Perm Key Plan -->
+      <div class="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl shadow-lg p-6 w-full max-w-sm text-center text-white hover:scale-105 transition border-4 border-indigo-500">
+        <h2 class="text-2xl font-semibold mb-2">Storgen Hub Perm Key</h2>
+        <p class="text-white mb-4">$5.49 <span class="text-sm text-gray-200">/ lifetime</span></p>
+        <ul class="text-sm text-gray-100 mb-6 space-y-2">
+          <li>✔ All Free features</li>
+          <li>✔ Exclusive game support</li>
+          <li>✔ Permanent license</li>
+          <li>✔ Premium Discord role</li>
+        </ul>
+        <button class="bg-white text-indigo-700 font-bold w-full py-2 rounded-xl">Buy Now</button>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="bg-gray-900 rounded-2xl shadow-lg p-6 w-full max-w-sm text-center hover:scale-105 transition">
+        <h2 class="text-2xl font-semibold mb-2">Storgen Hub Premium</h2>
+        <p class="text-gray-400 mb-4">Custom</p>
+        <ul class="text-sm text-gray-300 mb-6 space-y-2">
+          <li>✔ Custom integrations</li>
+          <li>✔ Dedicated support</li>
+          <li>✔ Team license</li>
+          <li>✔ Contact for quote</li>
+        </ul>
+        <button class="bg-gray-700 hover:bg-gray-600 w-full py-2 rounded-xl font-semibold">Contact Us</button>
+      </div>
+    </section>
+  </section>
+
+  <!-- Game List Section (Initially Hidden) -->
+  <section id="games" style="display: none;" class="mt-10 px-6 md:px-20">
+    <h2 class="text-3xl font-bold text-center mb-8">Game List</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-h-[80vh] overflow-y-auto p-4 bg-gray-900 rounded-2xl shadow-inner">
+      <!-- Games will be populated here -->
+    </div>
+  </section>
+
+  <footer class="text-center text-gray-500 text-sm mt-16 mb-6">
+    &copy; 2025 Storgen Hub. All rights reserved.
+  </footer>
+
+  <script>
+    const gameList = `da hood
+da hood AUTO FARM
+Arsenal
+horror rng
+gunfight arena
+tycoon rng
+Bee Swarm Simulater
+funky friday
+brookhaven
+Admin Rng
+character rng
+Dbz Rng
+pet trading 
+strucid
+MM2/murder mystery 2
+Driving Empire
+Basketball legends
+Blox Fruits
+Evade
+BrainRot Quiz
+Epic Mini games
+Zombie attack
+Rivals
+Anime Training Rng
+Baddies Auto Role
+PHANTOM BALL
+close Your Eyes
+pet go 
+dress to impress
+Natural Disaster Survival
+Prison Escape v2
+murderes vs shierff duels 
+kat
+Millionaire Empire Tycoon
+prison life
+Blade ball
+Doors
+Bedwars
+Tsb/The strongest BattleGrounds
+A DUSTY ROAD TRIP
+Sheriffs VS Murderers
+Build a boat for treasure
+Cabin Crew Simulater
+Break in story
+Ninja legends
+speed of legends
+Hoopz
+Flee The Facility
+war tycoon
+Big paintball 2
+sharkbite 2
+untilted tag game
+pet sim 99/ pet simulator 99
+Clicker Madness
+Aimblox
+Piggy
+fisch
+football fusion
+destruction simulator
+Slap Battles
+work at a pizza place
+robeats
+Muscle Legends
+kind legacy
+Deathball
+ultimate football
+car crusher 2
+pass the bomb
+Mount Rng
+jail break
+bloxburg
+Rebirth Champions X
+Break in story 2
+Animal Race Simulator
+Blade Slayer
+cars rng
+Dungeon RNG
+ability war
+Tower Of Hell
+race clicker
+Combat warrior
+counter blox
+Jujutsu shenanigans
+mic up
+Lumber Tycoon 2
+boss slayer
+Build A Boat With Blocks
+allblox battles
+ant war
+Block Mayhem
+Fling Things And People
+fastest typer race
+Gym League
+giant survival!
+Taxi Boss
+Swordmaster Simulator
+survive the killers
+PushUp Battles
+Build A Bridge Simulater
+pull a sword
+Survive Area 51
+pls Donate
+Get Huge Simulator
+Broken Bones IV
+No Limit Lifting Simulator
+Lucky Block Battlegrounds
+weight lifting simulator 3
+Launch Into Space Simulator
+Every Click +1 Speed
+vehicle legends
+Underground War 2.0
+viral simulator
+TPS: Street Soccer
+starving artist
+Project Slayers
+Kamehameha Simulator
+Baddies
+yeet a friend
+Animal Evolution Simulator
+Streetz War 2
+Steal Time from others
+Frisbee Simulator
+Vesteria
+find the keys
+Sonic Speed Simulator
+Breaking Point
+reborn as a swordmaster
+Go fishing
+Anime Punching Simulator 2
+westbound
+Tower of jumps
+word bomb
+ro ghoul
+swim league
+Total Roblox Drama
+block eaters
+Scythe Simulator
+granny
+My little pony tycoon
+tha bronx 2 i think 3
+Refinery Caves 2
+Flying rng
+Spin For Free
+pixle prisons
+Sneaker rng
+bike league
+Car Race Clicker
+car race simulator
+rift Racing Simulator
+Build a Boat Simulator
+Hide or Die
+Pull the rope
+Push Up Training Simulator
+Turbo Racing Simulator
+super anime merge
+Blood of Punch
+be a paper airplane
+dig it
+High Realms Skyblock
+frontlines
+phantom forces
+sky wars
+Drive world
+trident survival
+world zero
+blue rock rivals
+be npc or die
+BROKEN BONES IV
+ground wars
+emergency hamburg
+entry point
+type or die
+shrimp game
+make videos to become rich
+sheep tycoon
+Storage
+snipers
+SOUTHSIDE: CHICAGO
+brawl-blox
+Plank it!
+tennis simulator
+Be a duck!
+Farm for fun!
+Flex your FPS
+gang up on people
+Dandy's World
+live topia
+iq test
+ice tycoon
+lootify
+parkour legacy
+Verse piece
+krush pvp
+touch football
+deapthless rpg
+anime shadow
+Forsaken
+jailbird
+horse race
+Dead rails
+Combat initiation
+death in the box
+Midnight-chasers
+mall-drifters
+da strike
+hollow era
+rock fruit
+Southwest Florida
+State Of Anarchy
+Pillar Chase 2
+Neighborhood Tycoon
+find the capybaras
+aitsoft battles 
+shindo life
+squid games 
+prison line
+Realistic Hood Testing
+Pet Star Simulator
+Realm Rampage
+Clicking Universe
+Saber Simulator
+motorush
+block spin
+colony survival
+city defense tycoon
+expedition-antartica
+Immortal Luck
+Lost souls
+Criminal Tycoon
+Throw stuff for money
+Go Kart Training
+Car Training
+Make and Sell Cars
+Raise a peter
+Be a Car
+Home Run Simulator
+Drill Digging Simulator
+The Storage
+Naval Warfare
+bowling simulator
+desert detectors 
+Guess the drawing
+apocalypse Tycoon
+flood Escape 2
+Beast Force
+Anime Realms
+South London 2
+Asylum Life
+Booga Booga Reborn
+Balanced Craftwars Overhaul Emergency Response: Liberty County
+Heroes Battlegrounds
+burgeria-tycoon
+Forsaken
+blood debt
+Generic day in America
+basketball zero
+Grow a Garden
+YouTube Simulator Z
+Fishing Simulator
+Toilet Tower Defense
+Mining Empire
+Rebirth Champions: Ultimate
+Money Clicker Inc
+Ninja Tycoon
+T-Titans Battlegrounds
+World of Stands
+House Tycoon
+Case RNG
+Anime RNG TD
+Sword Clashers Simulator
+Obby But You Lose FPS
+Volleyball Legends
+Anime Power
+Merge Toy
+Pet Mine  
+Clicker League  
+Skateboard Obby  
+Gun Merge Tycoon  
+Army Roads  
+Plinko RNG  
+Be a Hole  
+Easy Grow Obby  
+Slime Tower Tycoon  
+Timber 2!  
+Aqua Racer  
+Punch Simulator  
+Pet Star Simulator  
+Headbattle Simulator  
+Throw Ball Simulator  
+Pass or Die  
+Fish Training  
+Noob Crusher Tycoon  
+Jetpack Training  
+Anime Smash Simulator  
+Power Slap Simulator  
+Merge for Speed!  
+Bee training  
+Your Bizarre Adventure  
+Vyasa  
+The floor is acid  
+Strongest Punch Simulator No Limit  
+Standblox  
+Shipping Lanes  
+Randomly Generated Droids  
+Snow Incremental Simulator  
+The Choosen One  
+Survival Odyssey  
+Rainbow Friends  
+Project Jojo  
+Pilgrammed  
+Phenom`;
+
+    const container = document.querySelector('#games .grid');
+    gameList.split('\n').forEach(game => {
+      const el = document.createElement('p');
+      el.textContent = game.trim();
+      el.className = "bg-gray-800 p-3 rounded-xl hover:bg-blue-600 transition text-white text-sm font-medium shadow-lg hover:shadow-blue-500/50";
+      container.appendChild(el);
+    });
+  </script>
+</body>
+</html>
